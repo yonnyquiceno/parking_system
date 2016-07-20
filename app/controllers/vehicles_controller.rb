@@ -12,7 +12,7 @@ class VehiclesController < ApplicationController
       redirect_to user_vehicles_path(current_user)
     else
       flash[:error] = @vehicle.errors.full_messages.join(',')
-      render new
+      render 'new'
     end
   end
 
