@@ -1,0 +1,29 @@
+<h2>New Vehicle</h2>
+
+<%= form_for @vehicle, url: {action: 'create'} do |f| %>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+
+      <div class="field ">
+        <%= f.label :model %><br />
+        <%= f.text_field :model, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :vin %><br />
+        <%= f.text_field :vin, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :year %><br />
+        <%= f.text_field :year, autofocus: true %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Crear" %>
+      </div>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+<% end %>

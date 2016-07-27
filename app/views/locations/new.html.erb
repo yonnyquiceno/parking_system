@@ -1,0 +1,25 @@
+<h2>New Location</h2>
+
+<%= form_for @location, url: {action: 'create'} do |f| %>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+
+      <div class="field ">
+        <%= f.label :description %><br />
+        <%= f.text_field :description, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :address %><br />
+        <%= f.text_field :address, autofocus: true %>
+      </div>
+
+
+      <div class="actions">
+        <%= f.submit "Crear" %>
+      </div>
+    </div>
+  <div class="col-md-4"></div>
+  </div>
+  <% end %>

@@ -1,0 +1,42 @@
+
+<div>
+  <%= render partial: "layouts/user_menu" %>
+</div>
+
+<h2> <%= current_user.first_name %> vehicles  </h2>
+
+
+<table style="width:100%" class="table-bordered table-striped">
+ <tr>
+   <th>Model</th>
+   <th>Vin</th>
+   <th>Year</th>
+ </tr>
+ <% current_user.vehicles.each do |v| %>
+ <tr>
+   <td><%=v.model%></td>
+   <td><%=v.vin%></td>
+   <td><%=v.year%></td>
+ </tr>
+ <% end %>
+
+</table>
+
+
+<h2> All vehicles </h2>
+
+<table style="width:100%" class="table-striped table-bordered">
+ <tr>
+   <th>Model</th>
+   <th>Vin</th>
+   <th>Year</th>
+ </tr>
+ <% @vehicles.each do |v| %>
+ <tr>
+   <td><%=v.model%></td>
+   <td><%=v.vin%></td>
+   <td><%=v.year%></td>
+ </tr>
+ <% end %>
+
+</table>
