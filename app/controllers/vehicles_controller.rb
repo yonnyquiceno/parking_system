@@ -4,6 +4,11 @@ class VehiclesController < ApplicationController
     @vehicle = Vehicle.new
   end
 
+  def index
+    @vehicles = Vehicle.all
+    flash[:error] = 'No vehicles registered' if @vehicles.empty?
+  end
+
   def create
     @vehicle = Vehicle.new(vehicle_params)
     @vehicle.user_id = current_user.id
