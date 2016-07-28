@@ -4,7 +4,12 @@ class LocationsController < ApplicationController
     flash[:error] = 'No locations registered' if @locations.empty?
   end
   def new
+    if current_user.is_admin
     @location = Location.new
+  else
+    flash[:error] = 'You must log in as administrator.'
+    redirect_to root_path    
+  end
   end
   def create
     @location = Location.new(location_params)
