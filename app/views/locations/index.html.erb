@@ -1,0 +1,22 @@
+<div>
+  <%= render partial: "layouts/user_menu" %>
+</div>
+
+<h2>  Locations </h2>
+
+
+<table style="width:100%" class="table-bordered table-striped">
+ <tr>
+   <th>description</th>
+   <th>longitude</th>
+   <th>latitude</th>
+ </tr>
+ <% @locations.each do |v| %>
+ <tr>
+   <td><%=v.description%></td>
+   <td><%=v.longitude%></td>
+   <td><%=v.latitude%></td>
+ </tr>
+ <% end %>
+
+</table>
